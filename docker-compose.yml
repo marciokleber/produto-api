@@ -1,0 +1,12 @@
+services:
+  postgres:
+    container_name: postgres
+    image: postgres
+    environment:
+      - POSTGRES_USER=produto
+      - POSTGRES_PASSWORD=produto
+      - POSTGRES_DB=produto
+    volumes:
+      - ./src/main/resources/postgres/:/docker-entrypoint-initdb.d/
+    ports:
+      - 5432:5432
